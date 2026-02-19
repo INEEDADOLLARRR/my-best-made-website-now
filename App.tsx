@@ -1,0 +1,97 @@
+import React, { useState } from 'react';
+import './index.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Quote } from './components/pages/Quote';
+import { MoreServices } from './components/pages/MoreServices';
+import { ServiceDetail } from './components/pages/ServiceDetail';
+import { EnterpriseServiceDetail } from './components/pages/EnterpriseServiceDetail';
+import { BlogIndex } from './components/pages/BlogIndex';
+import { BlogPost } from './components/pages/BlogPost';
+import { NotFound } from './components/pages/NotFound';
+import { Navbar } from './components/layout/Navbar';
+import { Hero } from './components/sections/Hero';
+import { TrustTicker } from './components/sections/TrustTicker';
+import { ValueGrid } from './components/sections/ValueGrid';
+import { Services } from './components/sections/Services';
+import { Gallery } from './components/sections/Gallery';
+import { LatestArticles } from './components/sections/LatestArticles';
+import { ContactLocations } from './components/sections/ContactLocations';
+import { Testimonials } from './components/sections/Testimonials';
+import { Footer } from './components/sections/Footer';
+import { OrganizationJsonLd, WebSiteJsonLd } from './components/seo/JsonLd';
+import { CanvasSlide } from './components/ui/CanvasSlide';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
+
+import { CustomCursor } from './components/ui/CustomCursor';
+import { LogoPreloader } from './components/ui/LogoPreloader';
+import { LayoutGroup } from 'framer-motion';
+
+function App() {
+  const [isPreloading, setIsPreloading] = useState(true);
+
+  // Lerp-based smooth scroll — buttery fluid feel
+  useSmoothScroll(0.08);
+
+  return (
+    <Router>
+      <LayoutGroup>
+        <div className="min-h-screen bg-brand-black text-white font-sans selection:bg-brand-blue selection:text-white relative">
+          {isPreloading && <LogoPreloader onComplete={() => setIsPreloading(false)} />}
+          <CustomCursor />
+          <Navbar isPreloading={isPreloading} />
+          <main>
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <OrganizationJsonLd />
+                  <WebSiteJsonLd />
+                  <Hero />
+                  <div className="relative z-20 bg-brand-black">
+                    <CanvasSlide>
+                      <Services />
+                    </CanvasSlide>
+                    <CanvasSlide>
+                      <TrustTicker />
+                    </CanvasSlide>
+                    <CanvasSlide>
+                      <ValueGrid />
+                    </CanvasSlide>
+                  </div>
+                  <Gallery />
+                  <CanvasSlide>
+                    <LatestArticles />
+                  </CanvasSlide>
+                  <CanvasSlide>
+                    <Testimonials />
+                  </CanvasSlide>
+                  <CanvasSlide>
+                    <ContactLocations />
+                  </CanvasSlide>
+                </>
+              } />
+              <Route path="/more-services" element={<MoreServices />} />
+              <Route path="/enterprise-services/:id" element={<EnterpriseServiceDetail />} />
+              <Route path="/services/:id" element={<ServiceDetail />} />
+              <Route path="/quote" element={<Quote />} />
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+
+          {/* Floating Widget */}
+          <div className="fixed bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-1000">
+            <button className="bg-white hover:bg-slate-200 text-black p-4 rounded-full shadow-2xl hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </LayoutGroup>
+    </Router>
+  );
+}
+
+export default App;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="D. C. Taylor Co. — Industrial roofing experts with 75 years of experience. Commercial reroofing, repairs, fall protection, and emergency services across the United States." />
+    <meta name="theme-color" content="#050505" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="D. C. Taylor Co." />
+    <meta property="og:title" content="D. C. Taylor Co. | Commercial Roofing Experts" />
+    <meta property="og:description" content="Industrial roofing experts with 75 years of experience. Commercial reroofing, repairs, fall protection, and emergency services." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="D. C. Taylor Co. | Commercial Roofing Experts" />
+    <meta name="twitter:description" content="Industrial roofing experts with 75 years of experience." />
+    <link rel="canonical" href="https://www.dctaylorco.com/" />
+    <title>D. C. Taylor Co. | Commercial Roofing Experts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:tight,wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                black: '#050505', // Deep Black
+                gray: '#121212',  // Off-black
+                white: '#ffffff',
+                blue: '#3b82f6',  // Brighter Blue for dark mode
+                orange: '#f97316', // Orange 500
+              }
+            },
+            animation: {
+              'float': 'float 8s ease-in-out infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              shimmer: {
+                from: { backgroundPosition: '0 0' },
+                to: { backgroundPosition: '-200% 0' },
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #050505;
+        color: #ffffff;
+      }
+      /* Hide scrollbar for ticker */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.574.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
