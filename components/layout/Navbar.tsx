@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OTHER_SERVICES } from '../../data/services';
+import { Logo } from '../ui/Logo';
 
 interface NavbarProps {
   isPreloading?: boolean;
@@ -41,14 +42,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isPreloading = false }) => {
             <Link to="/">
               <motion.div
                 layoutId="brand-logo"
-                className="z-50"
+                className="z-50 bg-white rounded-full p-1"
+                initial={{ rotate: -720 }}
+                animate={{ rotate: 0 }}
+                transition={{ duration: 1.5, ease: "circOut" }}
                 style={{ originX: 0, originY: 0.5 }}
               >
-                <img
-                  src="/logo.png"
-                  alt="D. C. Taylor Co."
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain hue-rotate-30 saturate-150 brightness-110 contrast-125 hover:opacity-80 transition-opacity"
-                />
+                <Logo className="w-16 h-16 md:w-20 md:h-20 hue-rotate-30 saturate-150 brightness-110 contrast-125 hover:opacity-80 transition-opacity" />
               </motion.div>
             </Link>
           )}
