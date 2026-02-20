@@ -118,7 +118,8 @@ const HoverCard: React.FC<{ service: typeof SERVICES[0] }> = ({ service }) => {
       >
         <Link
           to={`/enterprise-services/${service.slug}`}
-          className="absolute inset-0 z-20"
+          className="absolute inset-0 z-50 block"
+          style={{ transform: "translateZ(50px)" }}
           aria-label={service.title}
         />
 
