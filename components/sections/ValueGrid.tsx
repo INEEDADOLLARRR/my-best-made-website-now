@@ -1,31 +1,22 @@
 import React from 'react';
-import { Clock, TrendingUp, HardHat, ShieldAlert } from 'lucide-react';
 import { Reveal } from '../ui/Reveal';
 
 const FEATURES = [
   {
-    id: "01",
     title: "Zero Unplanned Downtime",
-    description: "Our preventative maintenance detects leaks before they stop your production line.",
-    icon: <Clock className="w-5 h-5" />
+    description: "Our preventative maintenance detects leaks before they stop your production line."
   },
   {
-    id: "02",
     title: "Eliminate Liability Risk",
-    description: "We don't just fix roofs; we install permanent fall protection to keep your workers safe.",
-    icon: <ShieldAlert className="w-5 h-5" />
+    description: "We don't just fix roofs; we install permanent fall protection to keep your workers safe."
   },
   {
-    id: "03",
     title: "10-Year Capital Certainty",
-    description: "Stop guessing. Our Roof Management Program forecasts your budget for the next decade.",
-    icon: <TrendingUp className="w-5 h-5" />
+    description: "Stop guessing. Our Roof Management Program forecasts your budget for the next decade."
   },
   {
-    id: "04",
     title: "Safety Beyond Compliance",
-    description: "Named one of America's Safest Companies. We protect your property and our people.",
-    icon: <HardHat className="w-5 h-5" />
+    description: "Named one of America's Safest Companies. We protect your property and our people."
   }
 ];
 
@@ -44,14 +35,9 @@ export const ValueGrid: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 bg-brand-black">
           {FEATURES.map((feature, index) => (
-            <Reveal key={feature.id} delay={0.1 * index} width="100%">
+            <Reveal key={index} delay={0.1 * index} width="100%">
               <div className="group h-full flex flex-col items-start border-l border-white/10 pl-6 hover:border-brand-gold/50 transition-colors duration-500">
-
-                <div className="text-xs font-mono text-brand-gold mb-4 opacity-70">
-                  /{feature.id}
-                </div>
-
-                <h3 className="text-xl font-serif text-white mb-3 group-hover:translate-x-1 transition-transform duration-300">
+                <h3 className="text-xl font-serif text-white mb-3">
                   {feature.title}
                 </h3>
 

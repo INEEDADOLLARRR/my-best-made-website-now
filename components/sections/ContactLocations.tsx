@@ -69,7 +69,6 @@ export const ContactLocations: React.FC = () => {
                 transition={{ delay: idx * 0.2 }}
               >
                 <div className="relative">
-                  <div className="absolute -inset-2 bg-brand-gold/20 rounded-full animate-ping" />
                   <div className="w-3 h-3 bg-brand-gold rounded-full relative z-10 cursor-pointer hover:scale-150 transition-transform" />
 
                   {/* Tooltip */}
@@ -95,7 +94,7 @@ export const ContactLocations: React.FC = () => {
                 <div className="relative z-10 text-white">
                   <div className="flex items-center gap-3 mb-2 opacity-90">
                     <Phone className="w-4 h-4 text-red-500" />
-                    <span className="font-mono tracking-widest text-xs uppercase text-red-400">Emergency Service</span>
+                    <span className="tracking-widest text-xs uppercase text-red-400">Emergency Service</span>
                   </div>
                   <h3 className="text-2xl font-serif mb-1">24/7 Rapid Response</h3>
                   <a href="tel:3193632073" className="magnetic-link text-xl font-light hover:text-red-400 transition-colors">

@@ -38,8 +38,6 @@ export const LogoPreloader: React.FC<LogoPreloaderProps> = ({ onComplete }) => {
                     }}
                     className="fixed inset-0 z-[100] bg-brand-black flex items-center justify-center flex-col overflow-hidden pointer-events-auto"
                 >
-                    {/* Subtle grain/noise overlay for texture */}
-                    <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png')] mix-blend-overlay z-0"></div>
 
                     {/* Centralized Brand Name */}
                     <div
