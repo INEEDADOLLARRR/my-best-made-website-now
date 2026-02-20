@@ -3,7 +3,6 @@ import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OTHER_SERVICES } from '../../data/services';
-import { Logo } from '../ui/Logo';
 
 interface NavbarProps {
   isPreloading?: boolean;
@@ -39,17 +38,8 @@ export const Navbar: React.FC<NavbarProps> = ({ isPreloading = false }) => {
         {/* Logo - Only renders its contents here when not preloading to allow layout transition */}
         <div className="relative z-50 flex items-center">
           {!isPreloading && (
-            <Link to="/">
-              <motion.div
-                layoutId="brand-logo"
-                className="z-50 bg-white rounded-full p-1"
-                initial={{ rotate: -720 }}
-                animate={{ rotate: 0 }}
-                transition={{ duration: 1.5, ease: "circOut" }}
-                style={{ originX: 0, originY: 0.5 }}
-              >
-                <Logo className="w-16 h-16 md:w-20 md:h-20 hue-rotate-30 saturate-150 brightness-110 contrast-125 hover:opacity-80 transition-opacity" />
-              </motion.div>
+            <Link to="/" className="text-2xl font-bold tracking-tighter text-white hover:opacity-80 transition-opacity whitespace-nowrap font-serif">
+              D. C. Taylor <span className="text-brand-blue">Co.</span>
             </Link>
           )}
         </div>
