@@ -41,10 +41,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isPreloading = false }) => {
             <Link to="/">
               <motion.div
                 layoutId="brand-logo"
-                className="text-2xl font-bold tracking-tighter text-white hover:opacity-80 transition-opacity whitespace-nowrap"
+                className="z-50"
                 style={{ originX: 0, originY: 0.5 }}
               >
-                D. C. Taylor <span className="text-brand-blue">Co.</span>
+                <img
+                  src="/logo.png"
+                  alt="D. C. Taylor Co."
+                  className="w-16 h-16 md:w-20 md:h-20 object-contain hue-rotate-30 saturate-150 brightness-110 contrast-125 hover:opacity-80 transition-opacity"
+                />
               </motion.div>
             </Link>
           )}

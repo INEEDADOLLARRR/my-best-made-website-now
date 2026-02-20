@@ -44,10 +44,17 @@ export const LogoPreloader: React.FC<LogoPreloaderProps> = ({ onComplete }) => {
                     {/* Centralized Logo with layoutId */}
                     <motion.div
                         layoutId="brand-logo"
-                        className="text-4xl md:text-6xl font-bold tracking-tighter text-white hover:opacity-80 transition-opacity z-10"
+                        initial={{ rotate: -720, scale: 0.5 }}
+                        animate={{ rotate: 0, scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="z-10"
                         style={{ originX: 0.5, originY: 0.5 }} // Ensure scaling from center during layout transition
                     >
-                        D. C. Taylor <span className="text-brand-blue">Co.</span>
+                        <img
+                            src="/logo.png"
+                            alt="D. C. Taylor Co."
+                            className="w-32 h-32 md:w-48 md:h-48 object-contain hue-rotate-30 saturate-150 brightness-110 contrast-125 hover:opacity-80 transition-opacity"
+                        />
                     </motion.div>
 
                 </motion.div>
